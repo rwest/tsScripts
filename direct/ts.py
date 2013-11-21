@@ -96,6 +96,8 @@ def calculate(TS, count):
     quantumMechanics.settings.onlyCyclics = False
     quantumMechanics.settings.maxRadicalNumber = 0
     
+    (reactant, product) = TS
+    
     reaction = Reaction(label='H_Abstraction', reactants=reactant.split(), products=product.split(), reversible=True)
     
     qmReaction = GaussianTSB3LYP(reaction, quantumMechanics.settings)
